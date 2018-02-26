@@ -11,6 +11,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     return console.log('Unable to connect to MongoDB server');
   }
   console.log('connected to MongoDB server');
+  db.collection('News').insertOne({
+    title: 'Political',
+    bodyText: "Moning news, hot news",
+    language: "Khmer"
+  }).then((err, result) => {
+    if(err){
+      return console.log("Unable to insert", err);
+    }
+
+    console.log("insert success", result)
+  })
+
   // db.collection('Todos').count().then((count) => {
   //   console.log(`Todos count ${count}`);
   // }, (err) => {
@@ -18,14 +30,14 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   // });
   // COUNT
 
-  db.collection('Users').find({
-    name: "Terrance"
-  }).toArray().then((docs) => {
-    console.log('Todo');
-    console.log(JSON.stringify(docs, undefined, 2));
-  }, (err) => {
-    console.log("unable to fetch todos", err);
-  });
+  // db.collection('Users').find({
+  //   name: "Terrance"
+  // }).toArray().then((docs) => {
+  //   console.log('Todo');
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (err) => {
+  //   console.log("unable to fetch todos", err);
+  // });
   // db.collection('Todos').insertOne({
   //   text: 'Something to do',
   //   completed: false

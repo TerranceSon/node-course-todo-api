@@ -46,7 +46,8 @@ app.get('/todos', (req, res) => {
   //   res.send({data});
   // }, (e) => {
   //   res.status(400).send(e)
-  // })  
+  // })
+  res.send('i am todo')
 });
 app.get('/getTodo', (req, res) => {
   console.log(req.query)

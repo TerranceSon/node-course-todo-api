@@ -18,9 +18,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log("unable to deleteMany")
   // })
   // findOneAndDelete
-  db.collection('Todos').findOneAndDelete({text: 'exercise'}).then((result)=>{
-    console.log("Deleted success", result)
-  }, (error) => {
-    console.log("unable to deleteMany")
-  })
+  // db.collection('Todos').findOneAndDelete({text: 'exercise'}).then((result)=>{
+  //   console.log("Deleted success", result)
+  // }, (error) => {
+  //   console.log("unable to deleteMany")
+  // })  
 });

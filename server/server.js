@@ -42,12 +42,11 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/todos', (req, res) => {
-  // Todo.find().then((data) => {
-  //   res.send({data});
-  // }, (e) => {
-  //   res.status(400).send(e)
-  // })
-  res.send('i am todo')
+  Todo.find().then((data) => {
+    res.send({data});
+  }, (e) => {
+    res.status(400).send(e)
+  })  
 });
 app.get('/getTodo', (req, res) => {
   console.log(req.query)

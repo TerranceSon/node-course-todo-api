@@ -42,11 +42,11 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/todos', (req, res) => {
-  Todo.find().then((data) => {
-    res.send({data});
-  }, (e) => {
-    res.status(400).send(e)
-  })
+  // Todo.find().then((data) => {
+  //   res.send({data});
+  // }, (e) => {
+  //   res.status(400).send(e)
+  // })  
 });
 app.get('/getTodo', (req, res) => {
   console.log(req.query)
@@ -84,7 +84,7 @@ app.get('/geTodoList/:id', (req, res) => {
 
 // GET /todos/
 app.listen(port, () => {
-  console.log("Started on port 3000");
+  console.log("App now running on port", port);
 })
 
 module.exports = {app}
